@@ -19,7 +19,8 @@ OBJS = $(SRCDIR)/interface.o $(SRCDIR)/src/types.o $(SRCDIR)/src/evolve.o  \
 $(SRCDIR)/src/structure.o $(SRCDIR)/src/ODE_system.o \
 $(SRCDIR)/src/root_finding.o $(SRCDIR)/src/newtonian.o \
 $(SRCDIR)/src/postnewtonian.o $(SRCDIR)/src/tides.o \
-$(SRCDIR)/src/external.o $(SRCDIR)/src/VRR.o $(SRCDIR)/src/cvode/cvode.o \
+$(SRCDIR)/src/external.o $(SRCDIR)/src/VRR.o $(SRCDIR)/src/tools.o \
+$(SRCDIR)/src/cvode/cvode.o \
 $(SRCDIR)/src/cvode/cvode_dense.o $(SRCDIR)/src/cvode/cvode_direct.o \
 $(SRCDIR)/src/cvode/cvode_io.o $(SRCDIR)/src/cvode/nvector_serial.o \
 $(SRCDIR)/src/cvode/sundials_dense.o $(SRCDIR)/src/cvode/sundials_direct.o \
@@ -52,4 +53,4 @@ src/interface.cpp:
 	make -C . download
 
 download:
-	git clone -b master https://github.com/hamers/secularmultiple.git src
+	git clone -b main https://github.com/amusecode/secularmultiple.git src
