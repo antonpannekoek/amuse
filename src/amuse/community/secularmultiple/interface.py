@@ -35,8 +35,8 @@ class SecularMultipleInterface(CodeInterface):
     # include_headers = ['interface.h','src/types.h','src/evolve.h','src/ODE_system.h']
 
     def __init__(self, **options):
-        #         CodeInterface.__init__(self, name_of_the_worker="secularmultiple_worker", **options)
-        CodeInterface.__init__(self, **options)
+        CodeInterface.__init__(self, name_of_the_worker="secularmultiple_worker", **options)
+        # CodeInterface.__init__(self, **options)
 
     #######################
     ### basic interface ###
@@ -1376,48 +1376,48 @@ class SecularMultiple(InCodeComponentImplementation):
     def define_particle_sets(self, handler):
 
         handler.define_set("particles", "index_of_the_particle")
-        handler.set_new("particles", "new_particle")
+        handler.set_new("particles", "add_particle")
         handler.set_delete("particles", "delete_particle")
 
         handler.add_setter("particles", "set_children", names=("child1", "child2"))
         handler.add_getter("particles", "get_children", names=("child1", "child2"))
         handler.add_setter("particles", "set_mass")
         handler.add_getter("particles", "get_mass")
-        handler.add_setter("particles", "set_mass_dot_external")
-        handler.add_getter("particles", "get_mass_dot_external")
+        # handler.add_setter("particles", "set_mass_dot_external")
+        # handler.add_getter("particles", "get_mass_dot_external")
         handler.add_setter("particles", "set_radius")
         handler.add_getter("particles", "get_radius")
-        handler.add_setter("particles", "set_radius_dot_external")
-        handler.add_getter("particles", "get_radius_dot_external")
-        handler.add_setter("particles", "set_radius_ddot_external")
-        handler.add_getter("particles", "get_radius_ddot_external")
+        # handler.add_setter("particles", "set_radius_dot_external")
+        # handler.add_getter("particles", "get_radius_dot_external")
+        # handler.add_setter("particles", "set_radius_ddot_external")
+        # handler.add_getter("particles", "get_radius_ddot_external")
 
         handler.add_getter("particles", "get_level")
 
         handler.add_setter("particles", "set_stellar_type")
         handler.add_getter("particles", "get_stellar_type")
 
-        handler.add_setter("particles", "set_true_anomaly")
-        handler.add_getter("particles", "get_true_anomaly")
+        # handler.add_setter("particles", "set_true_anomaly")
+        # handler.add_getter("particles", "get_true_anomaly")
 
-        handler.add_setter("particles", "set_sample_orbital_phases_randomly")
-        handler.add_getter("particles", "get_sample_orbital_phases_randomly")
+        # handler.add_setter("particles", "set_sample_orbital_phases_randomly")
+        # handler.add_getter("particles", "get_sample_orbital_phases_randomly")
 
-        handler.add_setter("particles", "set_instantaneous_perturbation_delta_mass")
-        handler.add_getter("particles", "get_instantaneous_perturbation_delta_mass")
-        handler.add_setter("particles", "set_instantaneous_perturbation_delta_position")
-        handler.add_getter("particles", "get_instantaneous_perturbation_delta_position")
-        handler.add_setter("particles", "set_instantaneous_perturbation_delta_velocity")
-        handler.add_getter("particles", "get_instantaneous_perturbation_delta_velocity")
+        # handler.add_setter("particles", "set_instantaneous_perturbation_delta_mass")
+        # handler.add_getter("particles", "get_instantaneous_perturbation_delta_mass")
+        # handler.add_setter("particles", "set_instantaneous_perturbation_delta_position")
+        # handler.add_getter("particles", "get_instantaneous_perturbation_delta_position")
+        # handler.add_setter("particles", "set_instantaneous_perturbation_delta_velocity")
+        # handler.add_getter("particles", "get_instantaneous_perturbation_delta_velocity")
 
         handler.add_setter("particles", "set_spin_vector")
         handler.add_getter("particles", "get_spin_vector")
-        handler.add_setter("particles", "set_spin_vector_dot_external")
-        handler.add_getter("particles", "get_spin_vector_dot_external")
-        handler.add_setter("particles", "set_orbital_vectors")
-        handler.add_getter("particles", "get_orbital_vectors")
-        handler.add_setter("particles", "set_orbital_vectors_dot_external")
-        handler.add_getter("particles", "get_orbital_vectors_dot_external")
+        # handler.add_setter("particles", "set_spin_vector_dot_external")
+        # handler.add_getter("particles", "get_spin_vector_dot_external")
+        # handler.add_setter("particles", "set_orbital_vectors")
+        # handler.add_getter("particles", "get_orbital_vectors")
+        # handler.add_setter("particles", "set_orbital_vectors_dot_external")
+        # handler.add_getter("particles", "get_orbital_vectors_dot_external")
         handler.add_setter(
             "particles",
             "set_orbital_elements",
@@ -1448,68 +1448,68 @@ class SecularMultiple(InCodeComponentImplementation):
         # handler.add_setter("particles", "set_velocity_vector")
         # handler.add_getter("particles", "get_velocity_vector")
 
-        handler.add_setter("particles", "set_include_pairwise_1PN_terms")
-        handler.add_getter("particles", "get_include_pairwise_1PN_terms")
-        handler.add_setter("particles", "set_include_pairwise_25PN_terms")
-        handler.add_getter("particles", "get_include_pairwise_25PN_terms")
+        # handler.add_setter("particles", "set_include_pairwise_1PN_terms")
+        # handler.add_getter("particles", "get_include_pairwise_1PN_terms")
+        # handler.add_setter("particles", "set_include_pairwise_25PN_terms")
+        # handler.add_getter("particles", "get_include_pairwise_25PN_terms")
 
-        handler.add_setter("particles", "set_tides_method")
-        handler.add_getter("particles", "get_tides_method")
-        handler.add_setter("particles", "set_include_tidal_friction_terms")
-        handler.add_getter("particles", "get_include_tidal_friction_terms")
-        handler.add_setter("particles", "set_include_tidal_bulges_precession_terms")
-        handler.add_getter("particles", "get_include_tidal_bulges_precession_terms")
-        handler.add_setter("particles", "set_include_rotation_precession_terms")
-        handler.add_getter("particles", "get_include_rotation_precession_terms")
-        handler.add_setter("particles", "set_minimum_eccentricity_for_tidal_precession")
-        handler.add_getter("particles", "get_minimum_eccentricity_for_tidal_precession")
+        # handler.add_setter("particles", "set_tides_method")
+        # handler.add_getter("particles", "get_tides_method")
+        # handler.add_setter("particles", "set_include_tidal_friction_terms")
+        # handler.add_getter("particles", "get_include_tidal_friction_terms")
+        # handler.add_setter("particles", "set_include_tidal_bulges_precession_terms")
+        # handler.add_getter("particles", "get_include_tidal_bulges_precession_terms")
+        # handler.add_setter("particles", "set_include_rotation_precession_terms")
+        # handler.add_getter("particles", "get_include_rotation_precession_terms")
+        # handler.add_setter("particles", "set_minimum_eccentricity_for_tidal_precession")
+        # handler.add_getter("particles", "get_minimum_eccentricity_for_tidal_precession")
 
-        handler.add_setter("particles", "set_tides_apsidal_motion_constant")
-        handler.add_getter("particles", "get_tides_apsidal_motion_constant")
-        handler.add_setter("particles", "set_tides_gyration_radius")
-        handler.add_getter("particles", "get_tides_gyration_radius")
-        handler.add_setter("particles", "set_tides_viscous_time_scale")
-        handler.add_getter("particles", "get_tides_viscous_time_scale")
-        handler.add_setter("particles", "set_tides_viscous_time_scale_prescription")
-        handler.add_getter("particles", "get_tides_viscous_time_scale_prescription")
-        handler.add_setter("particles", "set_convective_envelope_mass")
-        handler.add_getter("particles", "get_convective_envelope_mass")
-        handler.add_setter("particles", "set_convective_envelope_radius")
-        handler.add_getter("particles", "get_convective_envelope_radius")
-        handler.add_setter("particles", "set_luminosity")
-        handler.add_getter("particles", "get_luminosity")
+        # handler.add_setter("particles", "set_tides_apsidal_motion_constant")
+        # handler.add_getter("particles", "get_tides_apsidal_motion_constant")
+        # handler.add_setter("particles", "set_tides_gyration_radius")
+        # handler.add_getter("particles", "get_tides_gyration_radius")
+        # handler.add_setter("particles", "set_tides_viscous_time_scale")
+        # handler.add_getter("particles", "get_tides_viscous_time_scale")
+        # handler.add_setter("particles", "set_tides_viscous_time_scale_prescription")
+        # handler.add_getter("particles", "get_tides_viscous_time_scale_prescription")
+        # handler.add_setter("particles", "set_convective_envelope_mass")
+        # handler.add_getter("particles", "get_convective_envelope_mass")
+        # handler.add_setter("particles", "set_convective_envelope_radius")
+        # handler.add_getter("particles", "get_convective_envelope_radius")
+        # handler.add_setter("particles", "set_luminosity")
+        # handler.add_getter("particles", "get_luminosity")
 
-        handler.add_setter("particles", "set_check_for_secular_breakdown")
-        handler.add_getter("particles", "get_check_for_secular_breakdown")
-        handler.add_setter("particles", "set_check_for_dynamical_instability")
-        handler.add_getter("particles", "get_check_for_dynamical_instability")
-        handler.add_setter("particles", "set_dynamical_instability_criterion")
-        handler.add_getter("particles", "get_dynamical_instability_criterion")
-        handler.add_setter("particles", "set_dynamical_instability_central_particle")
-        handler.add_getter("particles", "get_dynamical_instability_central_particle")
-        handler.add_setter("particles", "set_dynamical_instability_K_parameter")
-        handler.add_getter("particles", "get_dynamical_instability_K_parameter")
+        # handler.add_setter("particles", "set_check_for_secular_breakdown")
+        # handler.add_getter("particles", "get_check_for_secular_breakdown")
+        # handler.add_setter("particles", "set_check_for_dynamical_instability")
+        # handler.add_getter("particles", "get_check_for_dynamical_instability")
+        # handler.add_setter("particles", "set_dynamical_instability_criterion")
+        # handler.add_getter("particles", "get_dynamical_instability_criterion")
+        # handler.add_setter("particles", "set_dynamical_instability_central_particle")
+        # handler.add_getter("particles", "get_dynamical_instability_central_particle")
+        # handler.add_setter("particles", "set_dynamical_instability_K_parameter")
+        # handler.add_getter("particles", "get_dynamical_instability_K_parameter")
 
-        handler.add_setter(
-            "particles", "set_check_for_physical_collision_or_orbit_crossing"
-        )
-        handler.add_getter(
-            "particles", "get_check_for_physical_collision_or_orbit_crossing"
-        )
+        # handler.add_setter(
+        #     "particles", "set_check_for_physical_collision_or_orbit_crossing"
+        # )
+        # handler.add_getter(
+        #     "particles", "get_check_for_physical_collision_or_orbit_crossing"
+        # )
 
-        handler.add_setter("particles", "set_check_for_minimum_periapse_distance")
-        handler.add_getter("particles", "get_check_for_minimum_periapse_distance")
-        handler.add_setter("particles", "set_check_for_minimum_periapse_distance_value")
-        handler.add_getter("particles", "get_check_for_minimum_periapse_distance_value")
+        # handler.add_setter("particles", "set_check_for_minimum_periapse_distance")
+        # handler.add_getter("particles", "get_check_for_minimum_periapse_distance")
+        # handler.add_setter("particles", "set_check_for_minimum_periapse_distance_value")
+        # handler.add_getter("particles", "get_check_for_minimum_periapse_distance_value")
 
-        handler.add_setter("particles", "set_check_for_RLOF_at_pericentre")
-        handler.add_getter("particles", "get_check_for_RLOF_at_pericentre")
-        handler.add_setter(
-            "particles", "set_check_for_RLOF_at_pericentre_use_sepinsky_fit"
-        )
-        handler.add_getter(
-            "particles", "get_check_for_RLOF_at_pericentre_use_sepinsky_fit"
-        )
+        # handler.add_setter("particles", "set_check_for_RLOF_at_pericentre")
+        # handler.add_getter("particles", "get_check_for_RLOF_at_pericentre")
+        # handler.add_setter(
+        #     "particles", "set_check_for_RLOF_at_pericentre_use_sepinsky_fit"
+        # )
+        # handler.add_getter(
+        #     "particles", "get_check_for_RLOF_at_pericentre_use_sepinsky_fit"
+        # )
 
         handler.add_setter("particles", "set_root_finding_state")
         handler.add_getter("particles", "get_root_finding_state")
@@ -1564,48 +1564,48 @@ class SecularMultiple(InCodeComponentImplementation):
         #     "relative_tolerance",
         #     default_value=1.0e-16,
         # )
-        handler.add_method_parameter(
-            "get_absolute_tolerance_eccentricity_vectors",
-            "set_absolute_tolerance_eccentricity_vectors",
-            "absolute_tolerance_eccentricity_vectors",
-            "absolute_tolerance_eccentricity_vectors",
-            default_value=1.0e-14,
-        )
-        handler.add_method_parameter(
-            "get_include_quadrupole_order_terms",
-            "set_include_quadrupole_order_terms",
-            "include_quadrupole_order_terms",
-            "include_quadrupole_order_terms",
-            default_value=True,
-        )
-        handler.add_method_parameter(
-            "get_include_octupole_order_binary_pair_terms",
-            "set_include_octupole_order_binary_pair_terms",
-            "include_octupole_order_binary_pair_terms",
-            "include_octupole_order_binary_pair_terms",
-            default_value=True,
-        )
-        handler.add_method_parameter(
-            "get_include_octupole_order_binary_triplet_terms",
-            "set_include_octupole_order_binary_triplet_terms",
-            "include_octupole_order_binary_triplet_terms",
-            "include_octupole_order_binary_triplet_terms",
-            default_value=False,
-        )
-        handler.add_method_parameter(
-            "get_include_hexadecupole_order_binary_pair_terms",
-            "set_include_hexadecupole_order_binary_pair_terms",
-            "include_hexadecupole_order_binary_pair_terms",
-            "include_hexadecupole_order_binary_pair_terms",
-            default_value=False,
-        )
-        handler.add_method_parameter(
-            "get_include_dotriacontupole_order_binary_pair_terms",
-            "set_include_dotriacontupole_order_binary_pair_terms",
-            "include_dotriacontupole_order_binary_pair_terms",
-            "include_dotriacontupole_order_binary_pair_terms",
-            default_value=False,
-        )
+        # handler.add_method_parameter(
+        #     "get_absolute_tolerance_eccentricity_vectors",
+        #     "set_absolute_tolerance_eccentricity_vectors",
+        #     "absolute_tolerance_eccentricity_vectors",
+        #     "absolute_tolerance_eccentricity_vectors",
+        #     default_value=1.0e-14,
+        # )
+        # handler.add_method_parameter(
+        #     "get_include_quadrupole_order_terms",
+        #     "set_include_quadrupole_order_terms",
+        #     "include_quadrupole_order_terms",
+        #     "include_quadrupole_order_terms",
+        #     default_value=True,
+        # )
+        # handler.add_method_parameter(
+        #     "get_include_octupole_order_binary_pair_terms",
+        #     "set_include_octupole_order_binary_pair_terms",
+        #     "include_octupole_order_binary_pair_terms",
+        #     "include_octupole_order_binary_pair_terms",
+        #     default_value=True,
+        # )
+        # handler.add_method_parameter(
+        #     "get_include_octupole_order_binary_triplet_terms",
+        #     "set_include_octupole_order_binary_triplet_terms",
+        #     "include_octupole_order_binary_triplet_terms",
+        #     "include_octupole_order_binary_triplet_terms",
+        #     default_value=False,
+        # )
+        # handler.add_method_parameter(
+        #     "get_include_hexadecupole_order_binary_pair_terms",
+        #     "set_include_hexadecupole_order_binary_pair_terms",
+        #     "include_hexadecupole_order_binary_pair_terms",
+        #     "include_hexadecupole_order_binary_pair_terms",
+        #     default_value=False,
+        # )
+        # handler.add_method_parameter(
+        #     "get_include_dotriacontupole_order_binary_pair_terms",
+        #     "set_include_dotriacontupole_order_binary_pair_terms",
+        #     "include_dotriacontupole_order_binary_pair_terms",
+        #     "include_dotriacontupole_order_binary_pair_terms",
+        #     default_value=False,
+        # )
         # handler.add_method_parameter(
         #     "get_orbital_phases_random_seed",
         #     "set_orbital_phases_random_seed",
@@ -1613,6 +1613,7 @@ class SecularMultiple(InCodeComponentImplementation):
         #     "orbital_phases_random_seed",
         #     default_value=0,
         # )
+        pass
 
     def define_methods(self, handler):
         pass
